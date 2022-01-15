@@ -1,0 +1,28 @@
+version: '3'
+services:
+    app-web:
+        restart: always
+        container_name: app-web
+        build:
+            context: ./app-web
+            dockerfile: Dockerfile
+        ports:
+            - 7777:7777
+    wemedia-web:
+        restart: always
+        container_name: wemedia-web
+        build:
+            context: ./wemedia-web
+            dockerfile: Dockerfile
+        ports:
+            - 9999:9999
+    admin-web:
+        restart: always
+        container_name: admin-web
+        build:
+            context: ./admin-web
+            dockerfile: Dockerfile
+        ports:
+            - 9977:9977
+
+# docker-compose up -d --build
